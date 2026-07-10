@@ -1,42 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colours</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Wars Models</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    color:white;
+    overflow-x:hidden;
+    background:#000;
+}
+
+
+.stars{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(2px 2px at 40px 70px,#fff,transparent),
+    radial-gradient(1px 1px at 90px 40px,#fff,transparent),
+    radial-gradient(2px 2px at 130px 80px,#fff,transparent),
+    radial-gradient(1px 1px at 160px 30px,#fff,transparent);
+    background-size:200px 200px;
+    animation:moveStars 30s linear infinite;
+    z-index:-2;
+}
+
+@keyframes moveStars{
+    from{transform:translateY(0);}
+    to{transform:translateY(200px);}
+}
+
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        rgba(0,0,20,0.4),
+        rgba(0,0,0,0.8)
+    );
+    z-index:-1;
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    color:#ffe81f;
+    font-size:60px;
+    text-shadow:0 0 15px #ffe81f;
+}
+
+header p{
+    color:#ccc;
+    margin-top:10px;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:30px;
+}
+
+.card{
+    width:320px;
+    background:rgba(10,10,30,0.85);
+    border:1px solid #ffe81f;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(255,232,31,0.3);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 30px rgba(255,232,31,0.7);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    color:#ffe81f;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.stl-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#ffe81f;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.stl-btn:hover{
+    background:white;
+    box-shadow:0 0 15px #ffe81f;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+}
+</style>
 </head>
-<body style="background-color: #c5f5fc; color:rgb(1, 59, 86);"> 
-    <p><span style="color: rgb(0, 30, 255);font-size:50px ">Roman</span><span style="color: red;font-size:50px">Yalamaf</span></p>
-    <h>+373 (76) 630547</h>
-    <p>The 10th of March 2014</p>
-    <h1>Системы счисления: как считает компьютер</h1>
+<body>
 
-<p>В жизни мы привыкли считать десятками. У нас 10 пальцев, поэтому наша родная система называется <strong>десятичной</strong>. Но компьютер — это умная коробка с проводами, у него нет пальцев. Ему проще различать только два сигнала: <em>есть ток</em> или <em>нет тока</em>.</p>
+<div class="stars"></div>
+<div class="overlay"></div>
 
-<h2>Двоичный код — язык электричества</h2>
+<header>
+    <h1>STAR WARS MODELS</h1>
+    <p>Collection of 3D models for printing</p>
+</header>
 
-<p>В двоичной системе всего две цифры: <strong>0</strong> и <strong>1</strong>. Эти две цифры называются <span style="color: red;">битами</span>. Из них можно сложить любую информацию, как из кирпичиков Лего.</p>
+<section class="gallery">
 
-<p>Вот так выглядят привычные числа в компьютере:</p>
+    <div class="card">
+        <img src="Venatir.png" alt="Venator">
+        <div class="card-content">
+            <h2>Venator</h2>
+            <p>Venator — the Republic’s main star destroyer during the Clone Wars, combining powerful weapons with a large starfighter hangar.
 
-<ul>
-    <li>Число <strong>0</strong> в двоичном коде — это <span style="background-color: yellow; padding: 2px;">0</span></li>
-    <li>Число <strong>1</strong> в двоичном коде — это <span style="background-color: yellow; padding: 2px;">1</span></li>
-    <li>Число <strong>2</strong> в двоичном коде — это <span style="background-color: yellow; padding: 2px;">10</span> (единица и ноль)</li>
-    <li>Число <strong>3</strong> в двоичном коде — это <span style="background-color: yellow; padding: 2px;">11</span></li>
-</ul>
+Acclamator — an assault ship used to transport clone troopers, vehicles, and equipment to battlefields across the galaxy.
 
-<h2>Зачем нам знать про системы?</h2>
+Senator — a diplomatic vessel designed for transporting senators and carrying out important missions for the Galactic Republic.</p>
+            <a href="venatir.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
 
-<p>Когда ты меняешь цвет фона или шрифт, компьютер внутри всё равно переводит твои команды в нолики и единицы. Мы <span style="color: blue; font-weight: bold;">не видим</span> этого перевода, но он происходит каждую миллисекунду!</p>
+    <div class="card">
+        <img src="sokol 2.png" alt="Death Star">
+        <div class="card-content">
+            <h2>Death Star</h2>
+            <p>Death Star — a massive battle station built by the Galactic Empire, equipped with a superlaser capable of destroying entire planets. It was designed to spread fear and secure Imperial control across the galaxy.</p>
+            <a href="sokol 2.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
 
-<h2>Восьмеричная и шестнадцатеричная</h2>
+    <div class="card">
+        <img src="clones.png" alt="Aclamator">
+        <div class="card-content">
+            <h2>Aclamotor</h2>
+            <p>Acclamator-class Assault Ship — a large Republic transport ship used to carry clone troopers, vehicles, and supplies across the galaxy. It played a key role in deploying Grand Army of the Republic forces during the Clone Wars.</p>
+            <a href="clones.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
 
-<p>Двоичный код очень длинный. Число 255 в двоичном виде выглядит как <span style="font-family: monospace; font-size: 20px;">11111111</span> (восемь единиц подряд). Чтобы программистам было удобнее, они придумали <strong>шестнадцатеричную</strong> систему. В ней используются цифры от 0 до 9 и буквы <strong>A, B, C, D, E, F</strong>. Именно её ты видишь, когда выбираешь цвет в HTML через решётку, например, <span style="color: #FF5733; font-weight: bold;">#FF5733</span>!</p>
+    <div class="card">
+        <img src="mc-100.png" alt="MC-100">
+        <div class="card-content">
+            <h2>MG-100 StarFortress SF-17 heavy bomber</h2>
+            <p>MC100 Star Cruiser — a powerful capital ship used by the Resistance, featuring strong shields, heavy armament, and advanced command systems. It served as one of the Resistance fleet’s main flagships during the war against the First Order.</p>
+            <a href="mc-100.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
 
-<hr>
+    <div class="card">
+        <img src="vs.png" alt="Imperial">
+        <div class="card-content">
+            <h2>Imperial I-class Star Destroyer</h2>
+            <p>Imperial Star Destroyer — the main warship of the Galactic Empire, designed to enforce Imperial rule through overwhelming firepower, heavy armor, and a powerful military presence across the galaxy.</p>
+            <a href="VS.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
 
-<p style="font-style: italic; color: gray;">Запомни: компьютер понимает только 0 и 1, а ты — программист — можешь писать красивые слова, а компьютер сам переведёт их в электричество!</p>
+     <div class="card">
+        <img src="first order.png" alt="Resurgent-class Star Destroyer">
+        <div class="card-content">
+            <h2>Resurgent-class Star Destroyer</h2>
+            <p>Resurgent-class Star Destroyer — the primary warship of the First Order, larger and more powerful than the Imperial Star Destroyers of the Galactic Empire. It carried advanced weapons, powerful shields, and a large complement of troops and starfighters.</p>
+            <a href="first orden.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
+
+     <div class="card">
+        <img src="air.png" alt="War next to Lothal">
+        <div class="card-content">
+            <h2>War next to Lothal</h2>
+            <p>The Battle of Lothal was an important victory for the Rebel Alliance. Grand Admiral Thrawn attacked the planet Lothal with the Imperial fleet. Ezra Bridger used the help of the purrgil, giant space creatures, to defeat the Empire. The purrgil took Thrawn and Ezra into hyperspace, allowing the Rebels to win. After the battle, Lothal was finally free from the Galactic Empire.</p>
+            <a href="air.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
+
+     <div class="card">
+        <img src="Armored Assault Tank Mk I.png" alt="">
+        <div class="card-content">
+            <h2>Armored Assault Tank Mk I</h2>
+            <p>The Armored Assault Tank Mark I (AAT) was a battle tank used by the Trade Federation during the Clone Wars. It was heavily armed with a powerful main cannon and laser weapons. The AAT was strong, fast, and effective in ground battles against enemy troops and vehicles.</p>
+            <a href="Armored Assault Tank Mk I.stl" download>
+    <button class="stl-btn">STL</button>
+</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Star Wars Models
+</footer>
+
 </body>
-    
 </html>
+
